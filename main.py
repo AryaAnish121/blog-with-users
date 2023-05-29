@@ -78,9 +78,6 @@ class Comment(db.Model):
     parent_post = relationship("BlogPost", back_populates="comments")
 
 
-db.create_all()
-
-
 def admin_only(fun):
     @wraps(fun)
     def decorated_function(*args, **kwargs):
@@ -224,4 +221,4 @@ def delete_post(post_id):
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.run(host='127.0.0.1', port=5000)
